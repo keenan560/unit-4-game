@@ -1,0 +1,67 @@
+body {
+    background-image: url(/Users/keenanmapp/Documents/unit-4-game/assets/images/maxresdefault.jpg);
+    background-repeat: no-repeat;
+    max-width: 100%;
+    background-size: 100%;
+}
+ 
+#welcome {
+    color: gold;
+    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Baloo Bhai', cursive;
+    font-family: 'Anton', sans-serif;
+}
+ #select {
+    color: firebrick;
+    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Baloo Bhai', cursive;
+    font-family: 'Anton', sans-serif; 
+    /* font-size: 20px; */
+ }
+
+.profile {
+  position: relative;
+  width:200px;
+  text-align:center;
+  display:block;
+  background-color: transparent;
+  border: 1px solid transparent;
+  margin-right: 10px;
+  margin-bottom: 1px;   
+  float:left;
+}
+.img-thumbnail {
+    width: 150px;
+    height: 150px;
+    padding-bottom: 20px;
+}
+.img-thumbnail:hover{
+    background-color: gold;
+    width: 200px;
+    height: 200px;
+}
+
+.hp {
+    color: darkgreen;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    left: 0;
+    bottom: 62px;
+}
+
+#arena {
+    background-image: url(/Users/keenanmapp/Documents/unit-4-game/assets/images/light.gif);
+    background-repeat: no-repeat;
+    height: 150px;
+    background-size: 100%;
+    opacity: 1.0;
+    position: relative;
+    top: 370px;
+    
+}
+
+#battle {
+    position: absolute;
+    top: 60%;
+}
