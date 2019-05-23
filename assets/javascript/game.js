@@ -7,7 +7,7 @@
 //    },
 //    resetPlayer: function(classType) {
 //     switch (classType) {
-//         case "Brett Hart": 
+//         case "Brett Hart":
 //             player = new Player("Brett Hart", 432, 8, 4,"Bret_Hart_-_WWE_Bret_Hart_Theme_Song_FilesNG.com.mp3");
 //           break;
 //         case "Shawn Michaels":
@@ -48,7 +48,6 @@
 
 //        getInterface();
 
-
 //    },
 //    setPreFight: function() {
 
@@ -66,8 +65,6 @@
 //     this.theme = theme;
 // }
 
-
-
 // function Enemy(enemyType, healthPoints, attackPower, counterAttack, theme) {
 //     this.enemyType = enemyType;
 //     this.healthPoints = healthPoints;
@@ -75,8 +72,6 @@
 //     this.counterAttack = counterAttack;
 //     this.theme = theme;
 // }
-
-
 
 // function hpOnPage(elementId) {
 //     for (var i = 0; i < characters.length; i++) {
@@ -98,153 +93,159 @@
 //         }
 // }
 
-
-
-
-
-
-
-// Cdoe for Wrestler Objs
-var characters = {
-    Hulk : {
-        name: "Hulk Hogan",
-        healthPoints: 500,
-        attackPower: 10,
-        counterAttack: 7,
-        theme: "Hulk-Hogan-Real-American.mp3"
+$(document).ready(function() {
+  // Cdoe for Wrestler Objs
+  var characters = {
+    Hulk: {
+      name: "Hulk Hogan",
+      healthPoints: 500,
+      attackPower: 10,
+      counterAttack: 7,
+      theme: "Hulk-Hogan-Real-American.mp3"
     },
-    Brett : {
-        name: "Brett Hart",
-        healthPoints: 432,
-        attackPower: 8,
-        counterAttack: 4,
-        theme: "Bret_Hart_-_WWE_Bret_Hart_Theme_Song_FilesNG.com.mp3"
+    Brett: {
+      name: "Brett Hart",
+      healthPoints: 432,
+      attackPower: 8,
+      counterAttack: 4,
+      theme: "Bret_Hart_-_WWE_Bret_Hart_Theme_Song_FilesNG.com.mp3"
     },
-    Stone : {
-        name: "Stone Cold",
-        healthPoints: 495,
-        attackPower: 9,
-        counterAttack: 4,
-        theme: "Steve-Austin-Stone-Cold-WWE-Theme.mp3"
+    Stone: {
+      name: "Stone Cold",
+      healthPoints: 495,
+      attackPower: 9,
+      counterAttack: 4,
+      theme: "Steve-Austin-Stone-Cold-WWE-Theme.mp3"
     },
-    Rock : {
-        name: "The Rock",
-        healthPoints: 398,
-        attackPower: 6,
-        counterAttack: 7,
-        theme: "The-Rock-Electrifying-WWE.mp3"
+    Rock: {
+      name: "The Rock",
+      healthPoints: 398,
+      attackPower: 6,
+      counterAttack: 7,
+      theme: "The-Rock-Electrifying-WWE.mp3"
     },
-    Shawn : {
-        name: "Shawn Michaels",
-        healthPoints: 480,
-        attackPower: 8,
-        counterAttack: 5,
-        theme: "Shawn-Michaels-Sexy-Boy-WWE.mp3"
+    Shawn: {
+      name: "Shawn Michaels",
+      healthPoints: 480,
+      attackPower: 8,
+      counterAttack: 5,
+      theme: "Shawn-Michaels-Sexy-Boy-WWE.mp3"
     },
-    Rick : {
-        name: "Rick Flair",
-        healthPoints: 465,
-        attackPower: 4,
-        counterAttack: 9,
-        theme: "Ric-Flair-Down-WWE-Theme-Song.mp3"
+    Rick: {
+      name: "Rick Flair",
+      healthPoints: 465,
+      attackPower: 4,
+      counterAttack: 9,
+      theme: "Ric-Flair-Down-WWE-Theme-Song.mp3"
     },
-    Razor : {
-        name: "Razor Ramon",
-        healthPoints: 391,
-        attackPower: 6,
-        counterAttack: 5,
-        theme: "1992 Razor Ramon - WWE Theme Song - Bad Guy [Download] [HD].mp3"
+    Razor: {
+      name: "Razor Ramon",
+      healthPoints: 391,
+      attackPower: 6,
+      counterAttack: 5,
+      theme: "1992 Razor Ramon - WWE Theme Song - Bad Guy [Download] [HD].mp3"
     },
-    Undertaker : {
-        name: "The Undertaker",
-        healthPoints: 415,
-        attackPower: 10,
-        counterAttack: 5,
-        theme: "The-Undertaker-WWE-Theme-Song.mp3"
+    Undertaker: {
+      name: "The Undertaker",
+      healthPoints: 415,
+      attackPower: 10,
+      counterAttack: 5,
+      theme: "The-Undertaker-WWE-Theme-Song.mp3"
     }
+  };
 
-}
+  // Variables
+  var chosen = false;
+  var enemy = false;
+  var user;
+  var cpu;
+  var baseAttack = 0;
 
-
-
-// Variables 
-var chosen = false;
-var enemy = false;
-var user;
-var cpu;
-var baseAttack = 0;
-
-function user(name, healthPoints, attackPower, counterAttack, theme) {
+  function user(name, healthPoints, attackPower, counterAttack, theme) {
     this.name = name;
     this.healthPoints = healthPoints;
     this.attackPower = attackPower;
     this.counterAttack = counterAttack;
     this.theme = theme;
-}
-function attackEnemy(user, enemy) {
-    while (characters.user.healthPoints > 0 || characters.enemy.healthPoints > 0) {
-        characters.enemy.healthPoints -= characters.user.attackPower;
-        characters.user.healthPoints -= characters.enemy.attackPower;
+  }
+  function attackEnemy(user, enemy) {
+    while (
+      characters.user.healthPoints > 0 ||
+      characters.enemy.healthPoints > 0
+    ) {
+      characters.enemy.healthPoints -= characters.user.attackPower;
+      characters.user.healthPoints -= characters.enemy.attackPower;
     }
-}
+  }
 
-function isEndofRound() {
-    if (characters.user.healthPoints <=0) {
-        alert("Hey you lost!");
-    } 
-    if (characters.enemy.healthPoints <=0) {
-        alert("Cool you won the round!");
+  function isEndofRound() {
+    if (characters.user.healthPoints <= 0) {
+      alert("Hey you lost!");
     }
+    if (characters.enemy.healthPoints <= 0) {
+      alert("Cool you won the round!");
+    }
+  }
 
-}
-
-
-function choosePlayer() {
+  function choosePlayer() {
     if (chosen === false) {
-        $("#arena").append(this);
-        user = this;
-        $("#arena").append("<img src='assets/images/vs.png'>");
-        $(this).addClass("user");
-        $(this).removeClass(".profile");
-        $(".img-thumbnail").addClass("bg-danger");
-        $("#select").html("Choose your opponent:");
-        chosen = true;
+      $("#arena").append($(this));
+      //   user = this;
+      $("#arena").append("<img src='assets/images/vs.png'>");
+      $(this).addClass("user");
+      $(this).removeClass(".profile");
+      $(".img-thumbnail").addClass("bg-danger");
+      $("#select").html("Choose your opponent:");
+      chosen = true;
+    } else {
+      $("#arena").append(this);
+      cpu = this;
+      $(this).addClass("enemy");
+      $(".img-thumbnail").removeClass("bg-danger");
+      $("#select").html("Get ready to rumble!!");
+      $(".btn").show();
+      $(".jumbotron").show();
+      $(".jumbotron").html(
+        "Use the Attack button below to beat your opponent!"
+      );
+      enemy = true;
     }
-    chooseEnemy();
-}
+    // Not sure what you're trying to do here
+    // chooseEnemy();
+  }
 
-let chooseEnemy = $(".profile").click(function () {
-    if ((chosen) && !(enemy)) {
-        $("#arena").append(this);
-        cpu = this;
-        $(this).addClass("enemy");
-        $(".img-thumbnail").removeClass("bg-danger");
-        $("#select").html("Get ready to rumble!!");
-        $(".btn").show();
-        $(".jumbotron").show();
-        $(".jumbotron").html("Use the Attack button below to beat your opponent!");
-        enemy = true;
-    }
-})
+  // Choose enemy is not a function it is an event listener listening for clicks
+  //   let chooseEnemy = $(".profile").click(function() {
+  //     if (chosen && !enemy) {
+  //       $("#arena").append(this);
+  //       cpu = this;
+  //       $(this).addClass("enemy");
+  //       $(".img-thumbnail").removeClass("bg-danger");
+  //       $("#select").html("Get ready to rumble!!");
+  //       $(".btn").show();
+  //       $(".jumbotron").show();
+  //       $(".jumbotron").html(
+  //         "Use the Attack button below to beat your opponent!"
+  //       );
+  //       enemy = true;
+  //     }
+  //   });
 
+  // Code to make objects appear with images
+  // You where calling the character objects by the wrong names.
+  $("#Brett").html("HP: " + characters.Brett.healthPoints);
+  $("#Shawn").html("HP: " + characters.Shawn.healthPoints);
+  $("#Rick").html("HP: " + characters.Rick.healthPoints);
+  $("#Rock").html("HP: " + characters.Rock.healthPoints);
+  $("#Stone").html("HP: " + characters.Stone.healthPoints);
+  $("#Hulk").html("HP: " + characters.Hulk.healthPoints);
+  $("#Undertaker").html("HP: " + characters.Undertaker.healthPoints);
+  $("#Razor").html("HP: " + characters.Razor.healthPoints);
 
-// Code to make objects appear with images
-$("#Brett").html("HP: " + characters.brettHart.healthPoints);
-$("#Shawn").html("HP: " + characters.shawnMichaels.healthPoints);
-$("#Rick").html("HP: " + characters.rickFlair.healthPoints);
-$("#Rock").html("HP: " + characters.theRock.healthPoints);
-$("#Stone").html("HP: " + characters.stoneCold.healthPoints);
-$("#Hulk").html("HP: " + characters.hulkHogan.healthPoints);
-$("#Undertaker").html("HP: " + characters.theUndertaker.healthPoints);
-$("#Razor").html("HP: " + characters.razorRamon.healthPoints);
+  // ***** Events *****
 
-// ***** Events *****
-
-$(document).ready(function () {
-    $(".btn").hide();
-    $(".jumbotron").hide()
-    $(".profile").click(choosePlayer);
-    // hpOnPage(".profile");
-})
-
-
+  $(".btn").hide();
+  $(".jumbotron").hide();
+  $(".profile").click(choosePlayer);
+  // hpOnPage(".profile");
+});
