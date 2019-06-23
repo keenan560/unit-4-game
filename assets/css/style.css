@@ -88,3 +88,17 @@ p {
     border: solid 1px gold;
 
 }
+
+#telecom {
+    background-color: blue !important;
+    color: gold !important;
+    border: solid 3px gold !important;
+    width: 800px;
+}
+
+
+.tele {
+    color: gold;
+    font-size: 18px;
+
+}
