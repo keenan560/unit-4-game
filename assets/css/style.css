@@ -19,7 +19,7 @@ body {
    
  }
 
-  img {
+  img  {
   position: relative;
   width:150px;
   height: 150px;
@@ -32,46 +32,30 @@ body {
   float:left;
 }
 .img-thumbnail {
+    padding: 10px 5px 20px 5px;
     width: 150px;
     height: 150px;
-    padding-bottom: 20px;
 }
 
 
-
-.img-thumbnail:hover{
-    background-color: rgb(130, 238, 184);
-    width: 175px;
-    height: 175px;
-}
-
-.img-thumbnail:active {
-    background-color: green;
-}
-
-.hp {
+p {
     color: blue;
     font-weight: bold;
     position: relative;
     text-align: center;
-    left: 0;
-    bottom: 62px;
+    left: -17px;
+    bottom: 23px;
+    font-size: 14px;
 }
 
 .text-warning {
     font-weight: bold;
 }
-#jumbo-container {
-    position: relative;
-}
+
 .jumbotron {
-    position: absolute;
-    width: 700px;
-    height: 75px;
-    background-color: blue;
-    color: gold;
-    border: solid gold 3px;
-  
+    background-color: blue !important;
+    color: gold !important;
+    border: solid 3px gold !important;
 }
 
 #arena {
@@ -94,5 +78,13 @@ body {
     color: gold;
     top: 63%;
     background-color: blue;
+    border: solid 1px gold;
+
+}
+
+#restart {
+    color: gold;
+    background-color: blue;
+    border: solid 1px gold;
 
 }
