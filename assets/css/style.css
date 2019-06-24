@@ -67,14 +67,14 @@ p {
     background-size: 100%;
     opacity: 1.0;
     width: 100%;
-    position: absolute;
-    top: 70%;
+    position: fixed;
+    top: 80%;
     
     
 }
 
 #battle {
-    position: absolute;
+    position: fixed;
     color: gold;
     top: 63%;
     background-color: blue;
@@ -94,11 +94,12 @@ p {
     color: gold !important;
     border: solid 3px gold !important;
     width: 800px;
+    max-height: 300px;
 }
 
 
 .tele {
     color: gold;
-    font-size: 18px;
+    font-size: 20px;
 
 }
