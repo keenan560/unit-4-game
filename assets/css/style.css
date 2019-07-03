@@ -59,7 +59,7 @@ p {
 }
 
 #arena {
-    background-image: url(/Users/keenanmapp/Documents/unit-4-game/assets/images/light.gif);
+    background-image: url(../images/light.gif);
     background-repeat: no-repeat;
     border-bottom: 3px solid blue;
     border-top: 3px solid blue;
