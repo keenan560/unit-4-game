@@ -267,6 +267,8 @@ $(document).ready(function () {
         } else if ((user.healthPoints <= 0 && cpu.healthPoints > 0) || (user.healthPoints <= 0 && cpu.healthPoints <= 0)) {
             bell.play();
             crowdBoo.play();
+            user.attackPower = 0;
+            $(".user").remove();    
             $("#roster").empty();
             $("#roster").append(`<div id='you-win' class='jumbotron mx-auto text-center'><h1 class='h1'>You Lose ${user.name}!</h1><button type='button' value='Refresh Page' id='restart'class='btn btn-lg mt-3 font-weight-bold'>Play Again</button></div>`);
             $("#battle").remove();
