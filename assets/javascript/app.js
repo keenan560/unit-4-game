@@ -10,65 +10,65 @@ $(document).ready(function () {
     var characters = [
         Hulk = {
             name: "Hulk Hogan",
-            healthPoints: 1000,
-            attackPower: 100,
-            counterAttack: Math.floor(Math.random() * 100),
+            healthPoints: 500,
+            attackPower: Math.floor(Math.random() * 100),
+            counterAttack: 20,
             photo: "assets/images/hulk-hogan.webp",
             theme: "assets/themes/Hulk-Hogan-Real-American.mp3"
         },
         Brett = {
             name: "Brett Hart",
-            healthPoints: 932,
-            attackPower: 89,
-            counterAttack: Math.floor(Math.random() * 100),
+            healthPoints: 492,
+            attackPower: Math.floor(Math.random() * 100),
+            counterAttack: 18,
             photo: "assets/images/bret-hart.jpg",
             theme: "assets/themes/Bret_Hart_-_WWE_Bret_Hart_Theme_Song_FilesNG.com.mp3"
         },
         Stone = {
             name: "Stone Cold",
-            healthPoints: 995,
-            attackPower: 90,
-            counterAttack: Math.floor(Math.random() * 100),
+            healthPoints: 485,
+            attackPower: Math.floor(Math.random() * 100),
+            counterAttack: 18,
             photo: "assets/images/stone-cold.jpeg",
             theme: "assets/themes/Steve-Austin-Stone-Cold-WWE-Theme.mp3"
         },
         Rock = {
             name: "The Rock",
-            healthPoints: 882,
-            attackPower: 90,
-            counterAttack: Math.floor(Math.random() * 100),
+            healthPoints: 401,
+            attackPower: Math.floor(Math.random() * 100),
+            counterAttack: 20,
             photo: "assets/images/the-rock.jpg",
             theme: "assets/themes/The-Rock-Electrifying-WWE.mp3"
         },
         Shawn = {
             name: "Shawn Michaels",
-            healthPoints: 880,
-            attackPower: 85,
-            counterAttack: Math.floor(Math.random() * 100),
+            healthPoints: 489,
+            attackPower: Math.floor(Math.random() * 100),
+            counterAttack: 20,
             photo: "assets/images/sean-michaels.jpeg",
             theme: "assets/themes/Shawn-Michaels-Sexy-Boy-WWE.mp3"
         },
         Rick = {
             name: "Rick Flair",
-            healthPoints: 865,
-            attackPower: 60,
-            counterAttack: Math.floor(Math.random() * 100),
+            healthPoints: 400,
+            attackPower: Math.floor(Math.random() * 100),
+            counterAttack: 24,
             photo: "assets/images/rick-flair.jpeg",
             theme: "assets/themes/Ric-Flair-Down-WWE-Theme-Song.mp3"
         },
         Razor = {
             name: "Razor Ramon",
-            healthPoints: 791,
-            attackPower: 80,
-            counterAttack: Math.floor(Math.random() * 100),
+            healthPoints: 398,
+            attackPower: Math.floor(Math.random() * 100),
+            counterAttack: 25,
             photo: "assets/images/razor-ramon.jpg",
             theme: "assets/themes/1992 Razor Ramon - WWE Theme Song - Bad Guy [Download] [HD].mp3"
         },
         Undertaker = {
             name: "The Undertaker",
-            healthPoints: 915,
-            attackPower: 50,
-            counterAttack: Math.floor(Math.random() * 100),
+            healthPoints: 474,
+            attackPower: Math.floor(Math.random() * 100),
+            counterAttack: 20,
             photo: "assets/images/undertaker.jpg",
             theme: "assets/themes/The-Undertaker-WWE-Theme-Song.mp3"
         }
@@ -108,7 +108,7 @@ $(document).ready(function () {
     function renderChars(characters) {
         for (var i = 0; i < characters.length; i++) {
             var wrestler = characters[i];
-            $("#roster").append(`<a id='${wrestler.name}'class="profile" href='#'><div><figure><img alt='${wrestler.name}'src='${wrestler.photo}'class='img-thumbnail wrestler '></img><p id='${wrestler.name}' class='.hp'>${wrestler.name} ${wrestler.healthPoints}</p></figure></div></a>`);
+            $("#roster").append(`<a id='${wrestler.name}'class="profile" href='#'><div><figure><img alt='${wrestler.name}'src='${wrestler.photo}'class='img-thumbnail wrestler '></img><p id='${wrestler.name.replace(/\s+/g, '-')}' class='.hp'>${wrestler.name} ${wrestler.healthPoints}</p></figure></div></a>`);
         }
     }
 
@@ -126,6 +126,15 @@ $(document).ready(function () {
         var move = new Audio(moves[randNum]);
         move.play();
     }
+
+    winLose = [
+        "assets/fight-sounds/boos3.mp3",
+        "assets/fight-sounds/cheer_8k.mp3"
+    ]
+
+    var crowdBoo = new Audio(winLose[0]);
+    var crowdCheer = new Audio(winLose[1]);
+
     var bell = new Audio("assets/fight-sounds/Boxing Bell Start Round-SoundBible.com-1691615580.mp3");
 
     var fightQuotes = [
@@ -225,7 +234,9 @@ $(document).ready(function () {
         user.healthPoints -= cpu.counterAttack;
         console.log(cpu.healthPoints);
         console.log(user.healthPoints);
-
+        
+        
+        $("#" + user.name).html(user.name + " " + user.healthPoints);
 
         // Code to update the telecom with damage points and HP
 
@@ -244,27 +255,24 @@ $(document).ready(function () {
         } else if (user.healthPoints <= 0) {
             user.attackPower = 0;
             $(".user").remove();
-            
+
         }
 
         // Code if User wins with restart button
         if (opponenstLeft === 0 && cpu.healthPoints <= 0) {
             bell.play();
+            crowdCheer.play();
             $("#roster").append(`<div id='you-win' class='jumbotron mx-auto text-center'><h1 class='h1'>You Win ${user.name}!</h1><button type='button' value='Refresh Page' id='restart'class='btn btn-lg mt-3 font-weight-bold'>Play Again</button></div>`);
             $("#battle").remove();
-        } else if (user.healthPoints <= 0 && cpu.healthPoints > 0) {
+        } else if ((user.healthPoints <= 0 && cpu.healthPoints > 0) || (user.healthPoints <= 0 && cpu.healthPoints <= 0)) {
             bell.play();
+            crowdBoo.play();
             $("#roster").empty();
             $("#roster").append(`<div id='you-win' class='jumbotron mx-auto text-center'><h1 class='h1'>You Lose ${user.name}!</h1><button type='button' value='Refresh Page' id='restart'class='btn btn-lg mt-3 font-weight-bold'>Play Again</button></div>`);
             $("#battle").remove();
         }
-
-
-
+        
     })
-
-
-
 
 })
 
