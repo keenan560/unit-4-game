@@ -12,7 +12,7 @@ $(document).ready(function () {
             name: "Hulk Hogan",
             healthPoints: 500,
             attackPower: Math.floor(Math.random() * 100),
-            counterAttack: 20,
+            counterAttack: 40,
             photo: "assets/images/hulk-hogan.webp",
             theme: "assets/themes/Hulk-Hogan-Real-American.mp3"
         },
@@ -20,7 +20,7 @@ $(document).ready(function () {
             name: "Brett Hart",
             healthPoints: 492,
             attackPower: Math.floor(Math.random() * 100),
-            counterAttack: 18,
+            counterAttack: 25,
             photo: "assets/images/bret-hart.jpg",
             theme: "assets/themes/Bret_Hart_-_WWE_Bret_Hart_Theme_Song_FilesNG.com.mp3"
         },
@@ -28,7 +28,7 @@ $(document).ready(function () {
             name: "Stone Cold",
             healthPoints: 485,
             attackPower: Math.floor(Math.random() * 100),
-            counterAttack: 18,
+            counterAttack: 30,
             photo: "assets/images/stone-cold.jpeg",
             theme: "assets/themes/Steve-Austin-Stone-Cold-WWE-Theme.mp3"
         },
@@ -36,7 +36,7 @@ $(document).ready(function () {
             name: "The Rock",
             healthPoints: 401,
             attackPower: Math.floor(Math.random() * 100),
-            counterAttack: 20,
+            counterAttack: 29,
             photo: "assets/images/the-rock.jpg",
             theme: "assets/themes/The-Rock-Electrifying-WWE.mp3"
         },
@@ -44,7 +44,7 @@ $(document).ready(function () {
             name: "Shawn Michaels",
             healthPoints: 489,
             attackPower: Math.floor(Math.random() * 100),
-            counterAttack: 20,
+            counterAttack: 25,
             photo: "assets/images/sean-michaels.jpeg",
             theme: "assets/themes/Shawn-Michaels-Sexy-Boy-WWE.mp3"
         },
@@ -52,7 +52,7 @@ $(document).ready(function () {
             name: "Rick Flair",
             healthPoints: 400,
             attackPower: Math.floor(Math.random() * 100),
-            counterAttack: 24,
+            counterAttack: 25,
             photo: "assets/images/rick-flair.jpeg",
             theme: "assets/themes/Ric-Flair-Down-WWE-Theme-Song.mp3"
         },
@@ -60,7 +60,7 @@ $(document).ready(function () {
             name: "Razor Ramon",
             healthPoints: 398,
             attackPower: Math.floor(Math.random() * 100),
-            counterAttack: 25,
+            counterAttack: 30,
             photo: "assets/images/razor-ramon.jpg",
             theme: "assets/themes/1992 Razor Ramon - WWE Theme Song - Bad Guy [Download] [HD].mp3"
         },
@@ -68,7 +68,7 @@ $(document).ready(function () {
             name: "The Undertaker",
             healthPoints: 474,
             attackPower: Math.floor(Math.random() * 100),
-            counterAttack: 20,
+            counterAttack: 50,
             photo: "assets/images/undertaker.jpg",
             theme: "assets/themes/The-Undertaker-WWE-Theme-Song.mp3"
         }

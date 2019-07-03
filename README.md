@@ -25,9 +25,10 @@ In order to win the entire game the user's character must defeat the his opponen
 
 If the user's health points fall to or below 0 it's game over and will have to restart their journey to the top. However if the cpu's health points fall to or below 0 then that opponent is thrusted out of the arena and the user chooses their next opponent. If all of the remaining opponents is 0 then the user wins and is crown WWF Wrestlemania Champion!
 
-Attack Power - Each wrestler's attack power is randmon number generated on each window load, therefore you never know how strong or weak your attack is. In contrast each wrestler's health points and counter attack have been manually entered. 
+Attack Power - Each wrestler's attack power is a randmon number generated on each window load, therefore you never know how strong or weak your attack is. In contrast each wrestler's health points and counter attack have been manually entered. 
 
 Below is demo to the game.
 
 
 Here is a link to play enjoy!
+https://keenan560.github.io/unit-4-game/
