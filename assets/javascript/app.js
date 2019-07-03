@@ -235,9 +235,10 @@ $(document).ready(function () {
         console.log(cpu.healthPoints);
         console.log(user.healthPoints);
         
-        
-        $("#" + user.name).html(user.name + " " + user.healthPoints);
+        $(`#${user.name.replace(/\s+/g, '-')}`).html(user.name + " " + user.healthPoints);
+        $(`#${cpu.name.replace(/\s+/g, '-')}`).html(cpu.name + " " + cpu.healthPoints);
 
+        
         // Code to update the telecom with damage points and HP
 
         $("#screen").html(`<div id='telecom'class='jumbotron text-center'><p class='tele mb-5'>${user.name} vs ${cpu.name}</p><p class='tele'>HP: ${user.healthPoints}------HP: ${cpu.healthPoints}</p><p class='tele'>You dealt ${user.attackPower} damage points to ${cpu.name}</p><p class='tele'>You received ${cpu.counterAttack} damage points from ${cpu.name}</p></div>`);
