@@ -1,8 +1,10 @@
 body {
     background-image: url(../images/maxresdefault.jpg);
-    background-repeat: no-repeat;
-    max-width: 100%;
-    background-size: 100%;
+    background-repeat:  no-repeat;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
  
 #welcome {
@@ -121,3 +123,74 @@ p {
   color: #f1f1f1;
   width: 100%;
 }
+
+
+/* Media breakpoints */
+
+/* // Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
+
+/* // Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) {
+    body {
+        width: 100%;
+        background-size: 100%;
+    }
+      video {
+        height: 100%;
+        width: 100%;
+    }
+
+    img {
+        height: 50%;
+        width: 50%;
+    }
+}
+/* 
+// Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) {
+       body {
+        width: 100%;
+        background-size: 100%;
+    }
+
+      video {
+        height: 100%;
+        width: 100%;
+    }
+
+      img {
+        height: 50%;
+        width: 50%;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) {
+       body {
+        width: 100%;
+        background-size: 100%;
+    }
+
+      video {
+        height: 100%;
+        width: 100%;
+    }
+      img {
+        height: 50%;
+        width: 50%;
+    }
+} */    
+
+/* // Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) {
+       body {
+        width: 100%;
+        background-size: 100%;
+    }
+
+    video {
+        height: 100%;
+        width: 100%;
+    }
+} */ 

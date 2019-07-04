@@ -208,6 +208,7 @@ $(document).ready(function () {
                         bell.play();
                         $("#screen").html(`<div id='telecom'class='jumbotron text-center'><p class='tele mb-5'>${user.name} vs ${cpu.name}</p></div>`);
                         enemy = true;
+                        $("#battle").show();
                     }
                 }
             }
@@ -249,6 +250,7 @@ $(document).ready(function () {
 
         if (cpu.healthPoints <= 0) {
             cpu.counterAttack = 0;
+            $('#battle').hide();
             $(".enemy").remove();
             enemy = false;
             chooseEnemy();
