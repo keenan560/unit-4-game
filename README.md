@@ -1,4 +1,4 @@
-# unit-4-game
+# Wrestlemaina RPG Game
 
 As part of a class assignment I created a RPG game with a Retro WWE (fka WWF) Wrestlemania theme. The user can select from the following superstars:
 
