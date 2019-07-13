@@ -262,7 +262,8 @@ $(document).ready(function () {
 
         } else if (user.healthPoints <= 0) {
             user.attackPower = 0;
-            $(".user").remove();
+            // $(".user").remove();
+            $(".user").addClass("rotateOutUpLeft");
 
         }
 
@@ -270,6 +271,8 @@ $(document).ready(function () {
         if (opponenstLeft === 0 && cpu.healthPoints <= 0) {
             bell.play();
             crowdCheer.play();
+            $(".user").removeClass("lightSpeedIn");
+            $(".user").addClass("tada");
             $("#roster").append(`<div id='you-win' class='jumbotron mx-auto text-center'><h1 class='h1'>You Win ${user.name}!</h1><button type='button' value='Refresh Page' id='restart'class='btn btn-lg mt-3 font-weight-bold'>Play Again</button></div>`);
             $("#battle").remove();
         } else if ((user.healthPoints <= 0 && cpu.healthPoints > 0) || (user.healthPoints <= 0 && cpu.healthPoints <= 0)) {
