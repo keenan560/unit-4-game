@@ -134,6 +134,7 @@ $(document).ready(function () {
 
     var crowdBoo = new Audio(winLose[0]);
     var crowdCheer = new Audio(winLose[1]);
+    var dying = new Audio("assets/fight-sounds/Street Fighter Death Sound.mp3")
 
     var bell = new Audio("assets/fight-sounds/Boxing Bell Start Round-SoundBible.com-1691615580.mp3");
 
@@ -173,6 +174,7 @@ $(document).ready(function () {
             for (var i = 0; i < characters.length; i++) {
                 if (characters[i].name === (this).id) {
                     $("#arena").append(this);
+                    $(this).addClass("animated lightSpeedIn");
                     user = characters[i];
                     console.log(user);
                     var track = new Audio(user.theme);
@@ -198,7 +200,9 @@ $(document).ready(function () {
             if ((chosen) && (enemy === false)) {
                 for (var i = 0; i < characters.length; i++) {
                     if (characters[i].name === (this).id) {
+                        $(".enemy").remove();
                         $("#arena").append(this);
+                        $(this).addClass("animated bounceInDown");
                         cpu = characters[i];
                         console.log(cpu);
                         $(this).addClass("enemy");
@@ -251,7 +255,8 @@ $(document).ready(function () {
         if (cpu.healthPoints <= 0) {
             cpu.counterAttack = 0;
             $('#battle').hide();
-            $(".enemy").remove();
+            $(".enemy").removeClass("bounceInDown");
+            $(".enemy").addClass("animated rollOut");
             enemy = false;
             chooseEnemy();
 
@@ -271,7 +276,8 @@ $(document).ready(function () {
             bell.play();
             crowdBoo.play();
             user.attackPower = 0;
-            $(".user").remove();    
+            $(".user").addClass("animated hinge"); 
+            // $(".user").remove(); 
             $("#roster").empty();
             $("#roster").append(`<div id='you-win' class='jumbotron mx-auto text-center'><h1 class='h1'>You Lose ${user.name}!</h1><button type='button' value='Refresh Page' id='restart'class='btn btn-lg mt-3 font-weight-bold'>Play Again</button></div>`);
             $("#battle").remove();
