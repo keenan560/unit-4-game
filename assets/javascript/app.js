@@ -210,7 +210,7 @@ $(document).ready(function () {
                         opponenstLeft -= 1;
                         $("#select").html(`Opponents left: ${opponenstLeft}`);
                         bell.play();
-                        $("#screen").html(`<div id='telecom'class='jumbotron text-center'><p class='tele mb-5'>${user.name} vs ${cpu.name}</p></div>`);
+                        $("#screen").html(`<div id='telecom'class='jumbotron text-center'><p class='tele text-center mb-5'>${user.name} vs ${cpu.name}</p></div>`);
                         enemy = true;
                         $("#battle").show();
                     }
@@ -239,14 +239,14 @@ $(document).ready(function () {
         user.healthPoints -= cpu.counterAttack;
         console.log(cpu.healthPoints);
         console.log(user.healthPoints);
-        
+
         $(`#${user.name.replace(/\s+/g, '-')}`).html(user.name + " " + user.healthPoints);
         $(`#${cpu.name.replace(/\s+/g, '-')}`).html(cpu.name + " " + cpu.healthPoints);
 
-        
+
         // Code to update the telecom with damage points and HP
 
-        $("#screen").html(`<div id='telecom'class='jumbotron text-center'><p class='tele mb-5'>${user.name} vs ${cpu.name}</p><p class='tele'>You dealt ${user.attackPower} damage points to ${cpu.name}</p><p class='tele'>You received ${cpu.counterAttack} damage points from ${cpu.name}</p></div>`);
+        $("#screen").html(`<div id='telecom'class='jumbotron text-center'><p class='tele mx-auto text-center mb-5'>${user.name} vs ${cpu.name}</p><p class='tele'>You dealt ${user.attackPower} damage points to ${cpu.name}</p><p class='tele'>You received ${cpu.counterAttack} damage points from ${cpu.name}</p></div>`);
 
         quotes(fightQuotes);
 
@@ -273,19 +273,19 @@ $(document).ready(function () {
             crowdCheer.play();
             $(".user").removeClass("lightSpeedIn");
             $(".user").addClass("tada");
-            $("#roster").append(`<div id='you-win' class='jumbotron mx-auto text-center'><h1 class='h1'>You Win ${user.name}!</h1><button type='button' value='Refresh Page' id='restart'class='btn btn-lg mt-3 font-weight-bold'>Play Again</button></div>`);
+            $("#roster").append(`<div id='you-win' class='jumbotron mx-auto text-center'><h1 class='h1 text-center mx-auto'>You Win ${user.name}!</h1><button type='button' value='Refresh Page' id='restart'class='btn btn-lg mt-3 font-weight-bold'>Play Again</button></div>`);
             $("#battle").remove();
         } else if ((user.healthPoints <= 0 && cpu.healthPoints > 0) || (user.healthPoints <= 0 && cpu.healthPoints <= 0)) {
             bell.play();
             crowdBoo.play();
             user.attackPower = 0;
-            $(".user").addClass("animated hinge"); 
+            $(".user").addClass("animated hinge");
             // $(".user").remove(); 
             $("#roster").empty();
             $("#roster").append(`<div id='you-win' class='jumbotron mx-auto text-center'><h1 class='h1'>You Lose ${user.name}!</h1><button type='button' value='Refresh Page' id='restart'class='btn btn-lg mt-3 font-weight-bold'>Play Again</button></div>`);
             $("#battle").remove();
         }
-        
+
     })
 
 })

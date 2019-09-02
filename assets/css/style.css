@@ -130,72 +130,42 @@ p {
 }
 
 
-/* Media breakpoints */
-
-/* // Extra small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap */
-
-/* // Small devices (landscape phones, 576px and up) */
-/* @media (min-width: 576px) {
-    body {
+@media only screen and (max-width: 769px) {
+    html, body {
+        background-image: url();
+        background-color: darkblue;
         width: 100%;
-        background-size: 100%;
-    }
-      video {
-        height: 100%;
-        width: 100%;
-    }
-
-    img {
-        height: 50%;
-        width: 50%;
-    }
-}
-/* 
-// Medium devices (tablets, 768px and up) */
-/* @media (min-width: 768px) {
-       body {
-        width: 100%;
-        background-size: 100%;
-    }
-
-      video {
-        height: 100%;
-        width: 100%;
-    }
-
-      img {
-        height: 50%;
-        width: 50%;
-    }
-}
-
-/* // Large devices (desktops, 992px and up) */
-/* @media (min-width: 992px) {
-       body {
-        width: 100%;
-        background-size: 100%;
-    }
-
-      video {
-        height: 100%;
-        width: 100%;
-    }
-      img {
-        height: 50%;
-        width: 50%;
-    }
-} */    
-
-/* // Extra large devices (large desktops, 1200px and up) */
-/* @media (min-width: 1200px) {
-       body {
-        width: 100%;
-        background-size: 100%;
     }
 
     video {
-        height: 100%;
-        width: 100%;
+        width: 400px;
+        height: 250px;
+        border: thick solid gold;
+     
     }
-} */ 
+
+    #telecom {
+        background-color: black !important;
+        width: 400px !important;
+        height: 250px !important;
+    }
+
+    .tele {
+        font-size: 15px;
+        margin: 5px !important;
+    }
+
+    #arena{
+        border: solid thick gold;
+        background-image: url();
+        background-color: black;
+    }
+
+    #battle {
+        background-color: black;
+        border: thick solid gold;
+       
+    }
+
+
+}
