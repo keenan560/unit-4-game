@@ -108,7 +108,7 @@ $(document).ready(function () {
     function renderChars(characters) {
         for (var i = 0; i < characters.length; i++) {
             var wrestler = characters[i];
-            $("#roster").append(`<a id='${wrestler.name}'class="profile" href='#'><div><figure><img alt='${wrestler.name}'src='${wrestler.photo}'class='img-thumbnail wrestler '></img><p id='${wrestler.name.replace(/\s+/g, '-')}' class='.hp'>${wrestler.name} ${wrestler.healthPoints}</p></figure></div></a>`);
+            $("#roster").append(`<a id='${wrestler.name}'class="profile" href='#'><div><figure><img alt='${wrestler.name}'src='${wrestler.photo}'class='img-thumbnail wrestler '></img><p id='${wrestler.name.replace(/\s+/g, '-')}' class='hp'>${wrestler.name} ${wrestler.healthPoints}</p></figure></div></a>`);
         }
     }
 

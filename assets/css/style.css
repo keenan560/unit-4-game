@@ -133,8 +133,17 @@ p {
 @media only screen and (max-width: 769px) {
     html, body {
         background-image: url();
-        background-color: darkblue;
+        background-color: darkgray;
         width: 100%;
+    }
+
+    .img-thumbnail {
+        background-color: black;
+        padding-bottom: 20px;
+    }
+
+    .hp {
+        color: gold !important;
     }
 
     video {
