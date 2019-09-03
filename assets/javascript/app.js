@@ -154,7 +154,7 @@ $(document).ready(function () {
 
     let quotes = function (fightQuotes) {
         var randNum = Math.floor(Math.random() * fightQuotes.length);
-        var quote = (`<p class='tele'>${fightQuotes[randNum]}</p>`);
+        var quote = (`<p class='tele mx-auto text-center'>${fightQuotes[randNum]}</p>`);
         $("#telecom").append(quote);
     }
 
@@ -180,7 +180,7 @@ $(document).ready(function () {
                     var track = new Audio(user.theme);
                     console.log(track);
                     track.play();
-                    $("#arena").append("<img src='assets/images/vs.png'>");
+                    $("#arena").append("<img id='vs'src='assets/images/vs.png'>");
                     $(this).addClass("user");
                     $(this).removeClass(".profile");
                     $(".img-thumbnail").addClass("bg-danger");
@@ -210,7 +210,7 @@ $(document).ready(function () {
                         opponenstLeft -= 1;
                         $("#select").html(`Opponents left: ${opponenstLeft}`);
                         bell.play();
-                        $("#screen").html(`<div id='telecom'class='jumbotron text-center'><p class='tele text-center mb-5'>${user.name} vs ${cpu.name}</p></div>`);
+                        $("#screen").html(`<div id='telecom'class='jumbotron text-center'><p class='tele mx-auto text-center text-center mb-5'>${user.name} vs ${cpu.name}</p></div>`);
                         enemy = true;
                         $("#battle").show();
                     }
@@ -246,7 +246,7 @@ $(document).ready(function () {
 
         // Code to update the telecom with damage points and HP
 
-        $("#screen").html(`<div id='telecom'class='jumbotron text-center'><p class='tele mx-auto text-center mb-5'>${user.name} vs ${cpu.name}</p><p class='tele'>You dealt ${user.attackPower} damage points to ${cpu.name}</p><p class='tele'>You received ${cpu.counterAttack} damage points from ${cpu.name}</p></div>`);
+        $("#screen").html(`<div id='telecom'class='jumbotron text-center'><p class='tele mx-auto text-center text-center mb-5'>${user.name} vs ${cpu.name}</p><p class='tele mx-auto text-center'>You dealt ${user.attackPower} damage points to ${cpu.name}</p><p class='tele mx-auto text-center'>You received ${cpu.counterAttack} damage points from ${cpu.name}</p></div>`);
 
         quotes(fightQuotes);
 

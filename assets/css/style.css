@@ -182,3 +182,63 @@ p {
 
 
 }
+
+
+@media only screen and (max-width: 361px) {
+     .profile, .img-thumbnail {
+        width:  85px;
+        height: 85px;
+        margin: 0 3px 0 3px;
+        text-align: center !important;
+    }
+    .hp  {
+        font-size: 6px !important;
+        margin-left: 5px;
+        text-align: end;
+       
+    }
+    video {
+        height: 0px;
+        width: 0px;
+        border: none;
+    }
+
+    #arena{
+        height: 100px;
+        width: 100% !important;
+        position: fixed;
+        bottom: 0;
+        margin-top: 0;
+    }
+    .tele {
+        font-size: 8px;
+    }
+
+    #telecom {  
+        height: 100px !important;
+        position: relative;
+        top: 100px;
+        width: 100%;
+        margin-bottom: 0 !important
+    }
+
+    #you-win {
+        height: 200px !important;
+    }
+    .jumbotron {
+        height: 150px !important;
+    }
+    #battle {
+        font-size: 10px;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        height: 60px;
+        margin: 5px 5px 5px 5px;
+    }
+    #vs {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+    }
+}
